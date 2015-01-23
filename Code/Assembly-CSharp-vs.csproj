@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\KeyboardController.cs" />
+     <Compile Include="Assets\LoadAtRandom.cs" />
      <Compile Include="Assets\ScorpionScript.cs" />
      <Compile Include="Assets\TimerRun.cs" />
  <Reference Include="UnityEngine.UI">
