@@ -50,6 +50,7 @@
      <Compile Include="Assets\KeyboardController.cs" />
      <Compile Include="Assets\LoadAtRandom.cs" />
      <Compile Include="Assets\ScorpionScript.cs" />
+     <Compile Include="Assets\Scripts\Zombie\AxeAnimation.cs" />
      <Compile Include="Assets\TimerRun.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
