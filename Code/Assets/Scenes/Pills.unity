@@ -265,6 +265,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 866409217}
   - 212: {fileID: 866409216}
+  - 114: {fileID: 866409218}
   m_Layer: 0
   m_Name: green-pill_sprite_v1
   m_TagString: Untagged
@@ -306,6 +307,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &866409218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 866409215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4bfb888e13148128fef6c8a9577df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shake_decay: 0
+  shake_intensity: 0
 --- !u!1 &1037860546
 GameObject:
   m_ObjectHideFlags: 0
