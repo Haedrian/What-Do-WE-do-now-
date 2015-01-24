@@ -37,8 +37,14 @@ public class KeyboardControllerPills : MonoBehaviour
 		if (Input.GetKeyDown(RedKey))
         {
 			RedPressed = true;
-			//Animate it
-			Red.GetComponent<ShakeScript>().enabled = true;
+
+            Vector3 newScale = this.Red.transform.localScale;
+
+            newScale.x *= 1.50f;
+            newScale.y *= 1.50f;
+
+            this.Red.transform.localScale = newScale;
+
 
            if (RedKey == WinKey)
             {
@@ -53,7 +59,12 @@ public class KeyboardControllerPills : MonoBehaviour
         {
 			GreenPressed = true;
 
-			Green.GetComponent<ShakeScript>().enabled = true;
+            Vector3 newScale = this.Green.transform.localScale;
+
+            newScale.x *= 1.50f;
+            newScale.y *= 1.50f;
+
+            this.Green.transform.localScale = newScale;
 
             if (GreenKey == WinKey)
             {
