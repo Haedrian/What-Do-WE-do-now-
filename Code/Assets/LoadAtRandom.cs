@@ -17,6 +17,10 @@ public class LoadAtRandom : MonoBehaviour {
 		//If playerprefs has the scene numbers, read from there
         if (PlayerPrefs.HasKey("scenes"))
         {
+			if (PlayerPrefs.GetString("scenes").Length == 0) //Completed them all, clever fellow
+			{
+				SceneNumbers = new List<int>();
+			}
             //It's a comma delimited set of ids
             SceneNumbers = PlayerPrefs.GetString("scenes").Split(',').Select(s => Int32.Parse(s)).ToList();
         }
