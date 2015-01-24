@@ -36,6 +36,11 @@ public class DCKeyboardController : MonoBehaviour
         if (this._keyPressed)
             return;
 
+        if (this.Timer.InstructionsMaxSeconds > 0)
+        {
+            return; //Instructions still showing
+        }
+
         if (Input.GetKeyDown(Ignite))
         {
             this._keyPressed = true;
