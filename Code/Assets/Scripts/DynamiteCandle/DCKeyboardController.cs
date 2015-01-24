@@ -14,11 +14,18 @@ public class DCKeyboardController : MonoBehaviour
     /// </summary>
     private bool _keyPressed;
 
+	private bool _ignite;
+
     public enum WinConditions
     {
         DoNothing = 0,
         Ignite = 1
     }
+
+	void Start()
+	{
+		_ignite = false;
+	}
 
     void Update()
     {
@@ -29,6 +36,8 @@ public class DCKeyboardController : MonoBehaviour
         {
             this._keyPressed = true;
 
+			this._ignite = true;
+
             if (WinCondition == WinConditions.Ignite)
             {
                 // Notify of win...
@@ -38,13 +47,15 @@ public class DCKeyboardController : MonoBehaviour
         {
             this._keyPressed = true;
 
+			this._ignite = false;
+
             if (WinCondition == WinConditions.DoNothing)
             {
                 // Notify of win...
             }
         }
 
-        if (this._keyPressed)
+        if (this._ignite)
         {
             // Enable any child GameObjects - which will be used to handle animation
             for (int i = 0; i < this.transform.childCount; i++)
