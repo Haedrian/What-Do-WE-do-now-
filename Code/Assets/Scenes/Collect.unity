@@ -179,6 +179,10 @@ Prefab:
       propertyPath: TimeMaxSeconds
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: Background
+      value: 
+      objectReference: {fileID: 1508786506}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
   m_RootGameObject: {fileID: 1227868166}
@@ -198,7 +202,7 @@ GameObject:
   - 114: {fileID: 994920403}
   - 95: {fileID: 994920402}
   m_Layer: 0
-  m_Name: Ship
+  m_Name: Pig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,7 +499,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1100446260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -5.25, z: 0}
+  m_LocalPosition: {x: -.49000001, y: -6.44999981, z: 0}
   m_LocalScale: {x: 5.625, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -546,7 +550,9 @@ MonoBehaviour:
   InstructionsTransform: {fileID: 418538028}
   Sound: {fileID: 0}
   InstructionsTimeLeft: 0
+  Background: {fileID: 1508786506}
   MissionComplete: 1
+  MissionFailed: 0
 --- !u!212 &1227868168
 SpriteRenderer:
   m_ObjectHideFlags: 0

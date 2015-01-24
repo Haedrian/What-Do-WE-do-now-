@@ -19,5 +19,6 @@ public class LoseScript : MonoBehaviour {
     {
         //You lose!
         controller.MissionComplete = false;
+        controller.MissionFailed = true;
     }
 }
