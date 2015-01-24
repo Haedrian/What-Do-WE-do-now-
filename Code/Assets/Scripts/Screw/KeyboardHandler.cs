@@ -36,12 +36,20 @@ public class KeyboardHandler : MonoBehaviour {
 		{
 			if (ScrewPressed)
 			{
-				ScrewItem.Rotate(Vector3.forward,-5);
+				if (ScrewItem != null)
+				{
+					ScrewItem.Rotate(Vector3.forward,-5);
+				}
+
 				ScrewDriver.Rotate(Vector3.up,-5);
 			}
 			else 
 			{
-				ScrewItem.gameObject.SetActive(false);
+				if (ScrewItem != null)
+				{
+					ScrewItem.gameObject.SetActive(false);
+				}
+
 				ScrewDriver.gameObject.SetActive(false);
 				Hand.gameObject.SetActive(false);
 

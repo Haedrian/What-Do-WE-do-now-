@@ -15,3 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Pills.unity
   - enabled: 1
     path: Assets/Scenes/DynamiteCandle.unity
+  - enabled: 1
+    path: Assets/Scenes/Screw.unity
+  - enabled: 1
+    path: Assets/Scenes/DontScrew.unity
