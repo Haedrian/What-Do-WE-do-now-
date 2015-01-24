@@ -24,7 +24,7 @@ public class ScorpionScript : MonoBehaviour
         TimeLeft = MaxTimeSeconds;
         StartLocation = this.transform.position;
 
-        yMovement = Random.Range(-1f, 1f);
+        yMovement = Random.Range(-0.5f, 0.5f);
 
         selector = this.transform.GetComponent<ScorpionSelector>();
         if (selector == null)
