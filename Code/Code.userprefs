@@ -1,15 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Screw\KeyboardHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Yellow\YellowKeyboardController.cs">
     <Files>
       <File FileName="..\..\..\..\Dropbox\Development\Unity\DodoVsLlama\DvL\Assets\Scripts\BonusEffectScript.cs" Line="1" Column="1" />
       <File FileName="Assets\KeyboardController.cs" Line="1" Column="1" />
       <File FileName="Assets\LoadAtRandom.cs" Line="1" Column="1" />
       <File FileName="Assets\KeepScore.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Zombie\AxeAnimation.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Pills\KeyboardControllerPills.cs" Line="65" Column="10" />
+      <File FileName="Assets\Scripts\Pills\KeyboardControllerPills.cs" Line="1" Column="1" />
       <File FileName="Assets\TimerRun.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Screw\KeyboardHandler.cs" Line="53" Column="5" />
+      <File FileName="Assets\Scripts\Screw\KeyboardHandler.cs" Line="111" Column="4" />
+      <File FileName="Assets\Scripts\Yellow\YellowKeyboardController.cs" Line="43" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

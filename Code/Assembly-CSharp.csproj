@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Scorpion\ScorpionScript.cs" />
      <Compile Include="Assets\Scripts\Scorpion\ScorpionSelector.cs" />
      <Compile Include="Assets\Scripts\Screw\KeyboardHandler.cs" />
+     <Compile Include="Assets\Scripts\Yellow\YellowKeyboardController.cs" />
      <Compile Include="Assets\Scripts\Zombie\AxeAnimation.cs" />
      <Compile Include="Assets\ShakeScript.cs" />
      <Compile Include="Assets\TimerRun.cs" />
