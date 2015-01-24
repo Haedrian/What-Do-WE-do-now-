@@ -52,6 +52,9 @@
      <Compile Include="Assets\KeyboardController.cs" />
      <Compile Include="Assets\LoadAtRandom.cs" />
      <Compile Include="Assets\MainMenuKeyboard.cs" />
+     <Compile Include="Assets\Scripts\Collect\Disappear.cs" />
+     <Compile Include="Assets\Scripts\Collect\LoseScript.cs" />
+     <Compile Include="Assets\Scripts\Collect\MovementCollect.cs" />
      <Compile Include="Assets\Scripts\Dodge\Movement.cs" />
      <Compile Include="Assets\Scripts\Dodge\ObstacleCreation.cs" />
      <Compile Include="Assets\Scripts\DynamiteCandle\DCKeyboardController.cs" />
