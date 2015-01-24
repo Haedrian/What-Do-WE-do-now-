@@ -53,12 +53,15 @@ public class KeyboardHandler : MonoBehaviour {
 				ScrewDriver.gameObject.SetActive(false);
 				Hand.gameObject.SetActive(false);
 
-				//-0.4
-				if (WoodPlank.transform.position.y > -0.4f)
+				if (WoodPlank != null)
 				{
-					Vector3 pos = WoodPlank.transform.position;
-					pos.y -= 0.1f;
-					WoodPlank.transform.position = pos;
+					//-0.4
+					if (WoodPlank.transform.position.y > -0.4f)
+					{
+						Vector3 pos = WoodPlank.transform.position;
+						pos.y -= 0.1f;
+						WoodPlank.transform.position = pos;
+					}
 				}
 			}
 			return;
