@@ -19,6 +19,35 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
+        //have we moved ?
+        //tell the animator
+        GetComponent<Animator>().SetBool("IsWalkingLeft", Input.GetKey(KeyCode.W));
+        GetComponent<Animator>().SetBool("IsWalkingRight", Input.GetKey(KeyCode.E));
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            //Flip!
+            if (this.transform.localScale.x > 0)
+            {
+                var ls = this.transform.localScale;
+                ls.x *= -1;
+
+                this.transform.localScale = ls;
+            }
+        }
+        else
+        if (Input.GetKey(KeyCode.E))
+        {
+            //Flip!
+            if (this.transform.localScale.x < 0)
+            {
+                var ls = this.transform.localScale;
+                ls.x *= -1;
+
+                this.transform.localScale = ls;
+            }
+        }
+
         if (Input.GetKey(KeyCode.W))
         {
             speed.x += -2;
