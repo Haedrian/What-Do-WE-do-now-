@@ -21,11 +21,6 @@ public class ScorpionSelector : MonoBehaviour
             entryPoint = EntryPoints.Left;
 
             this.transform.position = LeftEntryPoint.position;
-
-            // Flip the scorpion sprite
-            Vector3 invertedPosition = this.transform.localScale;
-            invertedPosition.x *= -1;
-            this.transform.localScale = invertedPosition;
         }
         else
         {
@@ -33,6 +28,11 @@ public class ScorpionSelector : MonoBehaviour
             entryPoint = EntryPoints.Right;
 
             this.transform.position = RightEntryPoint.position;
+
+            // Flip the scorpion sprite
+            Vector3 invertedPosition = this.transform.localScale;
+            invertedPosition.x *= -1;
+            this.transform.localScale = invertedPosition;
         }
     }
 

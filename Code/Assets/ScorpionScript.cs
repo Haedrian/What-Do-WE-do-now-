@@ -11,18 +11,20 @@ public class ScorpionScript : MonoBehaviour
     /// <summary>
     /// The maximum time in seconds to move
     /// </summary>
-    public double MaxTimeSeconds = 4;
+    public float MaxTimeSeconds = 4;
 
     private Vector3 StartLocation;
     private ScorpionSelector selector;
-    private double TimeLeft;
-
+    private float TimeLeft;
+    private float yMovement;
 
     // Use this for initialization
     void Start()
     {
         TimeLeft = MaxTimeSeconds;
         StartLocation = this.transform.position;
+
+        yMovement = Random.Range(-1f, 1f);
 
         selector = this.transform.GetComponent<ScorpionSelector>();
         if (selector == null)
@@ -36,11 +38,17 @@ public class ScorpionScript : MonoBehaviour
 
         TimeLeft = TimeLeft < 0 ? 0 : TimeLeft;
 
-        double timeFraction = TimeLeft / MaxTimeSeconds;
+        float timeFraction = TimeLeft / MaxTimeSeconds;
+        Vector3 newPosition = this.transform.position;
 
         if (selector.EntryPoint == ScorpionSelector.EntryPoints.Left)
-            this.transform.position = Vector3.Lerp(LeftExitPoint.position, StartLocation, (float)timeFraction);
+            newPosition = Vector3.Lerp(LeftExitPoint.position, StartLocation, timeFraction);
         else if (selector.EntryPoint == ScorpionSelector.EntryPoints.Right)
-            this.transform.position = Vector3.Lerp(RightExitPoint.position, StartLocation, (float)timeFraction);
+            newPosition = Vector3.Lerp(RightExitPoint.position, StartLocation, timeFraction);
+
+        // Move in the y-axis
+        newPosition.y = Mathf.Lerp(StartLocation.y, StartLocation.y + yMovement, timeFraction);
+
+        this.transform.position = newPosition;
     }
 }
