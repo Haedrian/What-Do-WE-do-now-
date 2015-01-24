@@ -80,7 +80,11 @@
     <Compile Include="Assets\Scripts\Yellow\YellowKeyboardController.cs" />
     <Compile Include="Assets\Scripts\Zombie\AxeAnimation.cs" />
     <Compile Include="Assets\ShakeScript.cs" />
+    <Compile Include="Assets\ThingsToDo.cs" />
     <Compile Include="Assets\TimerRun.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Resources\stuffyoucando.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

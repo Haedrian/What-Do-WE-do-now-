@@ -72,7 +72,9 @@
      <Compile Include="Assets\Scripts\Yellow\YellowKeyboardController.cs" />
      <Compile Include="Assets\Scripts\Zombie\AxeAnimation.cs" />
      <Compile Include="Assets\ShakeScript.cs" />
+     <Compile Include="Assets\ThingsToDo.cs" />
      <Compile Include="Assets\TimerRun.cs" />
+     <None Include="Assets\Resources\stuffyoucando.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
