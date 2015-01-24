@@ -46,7 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\KeepScore.cs" />
      <Compile Include="Assets\KeyboardController.cs" />
+     <Compile Include="Assets\LoadAtRandom.cs" />
      <Compile Include="Assets\ScorpionScript.cs" />
      <Compile Include="Assets\ScorpionSelector.cs" />
      <Compile Include="Assets\TimerRun.cs" />

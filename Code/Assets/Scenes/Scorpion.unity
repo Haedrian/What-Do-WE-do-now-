@@ -74,6 +74,50 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1001 &9280692
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.129999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.27999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+  m_RootGameObject: {fileID: 939344170}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &115237114
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +178,8 @@ GameObject:
   - 4: {fileID: 246807231}
   - 212: {fileID: 246807230}
   - 114: {fileID: 246807232}
+  - 114: {fileID: 246807233}
+  - 114: {fileID: 246807234}
   m_Layer: 0
   m_Name: scorpion
   m_TagString: Untagged
@@ -170,7 +216,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 246807229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.94999981, y: -1.13999999, z: 0}
+  m_LocalPosition: {x: .0199999996, y: -8.06999969, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -186,8 +232,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b98241a52b58a479cb13af3885f797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTimeSeconds: 4
-  EndLocation: {x: 6.19999981, y: -1.13999999, z: 0}
+  LeftExitPoint: {fileID: 1220898628}
+  RightExitPoint: {fileID: 546137219}
+  MaxTimeSeconds: 3.5
+--- !u!114 &246807233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246807229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e99a88fa4f28dd4eb806bd797b45432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftEntryPoint: {fileID: 301972356}
+  RightEntryPoint: {fileID: 729439711}
+--- !u!114 &246807234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246807229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ff1328e7a299c4ab77f6062b5617cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftLegKey: 119
+  RightLegKey: 101
+  leftLeg: {fileID: 312228488}
+  rightLeg: {fileID: 2135002711}
+  HeightYCoordinate: 6.51999998
+--- !u!1 &301972355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 301972356}
+  m_Layer: 0
+  m_Name: ScorpionLeftEntryPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &301972356
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 301972355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.3000002, y: -1.13999999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &312228486
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,46 +341,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &909340097
+--- !u!1 &546137218
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 909340099}
-  - 114: {fileID: 909340098}
+  - 4: {fileID: 546137219}
   m_Layer: 0
-  m_Name: KeyboardController
+  m_Name: ScorpionRightExitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &909340098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 909340097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8ff1328e7a299c4ab77f6062b5617cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LeftLegKey: 119
-  RightLegKey: 101
-  leftLeg: {fileID: 312228488}
-  rightLeg: {fileID: 2135002711}
-  HeightYCoordinate: 6.51999998
---- !u!4 &909340099
+--- !u!4 &546137219
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 909340097}
+  m_GameObject: {fileID: 546137218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.25, y: -1.13999999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+--- !u!1 &729439710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 729439711}
+  m_Layer: 0
+  m_Name: ScorpionRightEntryPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &729439711
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 729439710}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.2399998, y: -1.13999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -285,8 +398,8 @@ Transform:
 --- !u!1 &939344170
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 164300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+  m_PrefabInternal: {fileID: 9280692}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 939344173}
@@ -302,8 +415,9 @@ GameObject:
 --- !u!114 &939344171
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4,
+    type: 2}
+  m_PrefabInternal: {fileID: 9280692}
   m_GameObject: {fileID: 939344170}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -311,11 +425,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeMaxSeconds: 4
+  MissionComplete: 0
 --- !u!212 &939344172
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 21264300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4,
+    type: 2}
+  m_PrefabInternal: {fileID: 9280692}
   m_GameObject: {fileID: 939344170}
   m_Enabled: 1
   m_CastShadows: 0
@@ -336,8 +452,8 @@ SpriteRenderer:
 --- !u!4 &939344173
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+  m_PrefabInternal: {fileID: 9280692}
   m_GameObject: {fileID: 939344170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.129999995, y: -3.27999997, z: 0}
@@ -345,6 +461,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &1220898627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1220898628}
+  m_Layer: 0
+  m_Name: ScorpionLeftExitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1220898628
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1220898627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.17000008, y: -1.13999999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &1297776620
 GameObject:
   m_ObjectHideFlags: 0
