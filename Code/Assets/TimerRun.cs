@@ -9,7 +9,7 @@ public class TimerRun : MonoBehaviour {
 	public Transform InstructionsTransform;
 	public AudioSource Sound;
 
-	private double InstructionsTimeLeft;
+	public double InstructionsTimeLeft;
 	private double TimeLeft {get;set;}
 	private float MaxScale {get;set;}
 

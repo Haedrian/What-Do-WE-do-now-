@@ -129,6 +129,10 @@ Prefab:
       propertyPath: InstructionsMaxSeconds
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 164300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: m_Name
+      value: Controller
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
   m_RootGameObject: {fileID: 939344170}
@@ -264,19 +268,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftEntryPoint: {fileID: 301972356}
   RightEntryPoint: {fileID: 729439711}
+  Keyboard: {fileID: 939344174}
 --- !u!114 &246807234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 246807229}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8ff1328e7a299c4ab77f6062b5617cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LeftLegKey: 101
   RightLegKey: 119
+  WinKey: 0
+  LoseKey: 0
   leftLeg: {fileID: 312228488}
   rightLeg: {fileID: 2135002711}
   HeightYCoordinate: 6.51999998
@@ -302,7 +309,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 301972355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.15999985, y: 2, z: 0}
+  m_LocalPosition: {x: -7.15999985, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -379,7 +386,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 546137218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.30999994, y: 2, z: 0}
+  m_LocalPosition: {x: 3.5, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -406,7 +413,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 729439710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0999999, y: 2, z: 0}
+  m_LocalPosition: {x: 7.0999999, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -421,8 +428,9 @@ GameObject:
   - 4: {fileID: 939344173}
   - 212: {fileID: 939344172}
   - 114: {fileID: 939344171}
+  - 114: {fileID: 939344174}
   m_Layer: 0
-  m_Name: timer
+  m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,6 +452,7 @@ MonoBehaviour:
   InstructionsMaxSeconds: 2
   InstructionsTransform: {fileID: 1835780810}
   Sound: {fileID: 0}
+  InstructionsTimeLeft: 0
   MissionComplete: 0
 --- !u!212 &939344172
 SpriteRenderer:
@@ -480,6 +489,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &939344174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 939344170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ff1328e7a299c4ab77f6062b5617cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftLegKey: 101
+  RightLegKey: 119
+  WinKey: 0
+  LoseKey: 0
+  leftLeg: {fileID: 312228488}
+  rightLeg: {fileID: 2135002711}
+  HeightYCoordinate: 5
 --- !u!1 &1220898627
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +529,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1220898627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.84000015, y: 2, z: 0}
+  m_LocalPosition: {x: -3.5, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -606,7 +633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1835780809
 SpriteRenderer:
   m_ObjectHideFlags: 0

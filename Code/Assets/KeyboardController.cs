@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(ScorpionSelector))]
+[RequireComponent(typeof(TimerRun))]
 public class KeyboardController : MonoBehaviour
 {
-    public KeyCode LeftLegKey = KeyCode.W;
-    public KeyCode RightLegKey = KeyCode.E;
+    public KeyCode LeftLegKey = KeyCode.E;
+    public KeyCode RightLegKey = KeyCode.W;
 
     private bool LeftLegPressed = false;
     private bool RightLegPressed = false;
+
+	public KeyCode WinKey;
+	public KeyCode LoseKey;
 
     public Transform leftLeg;
     public Transform rightLeg;
@@ -28,15 +31,16 @@ public class KeyboardController : MonoBehaviour
         leftLegStart = leftLeg.position;
         rightLegStart = rightLeg.position;
         animationTime = maxAnimationTime;
-
-        selector = this.transform.GetComponent<ScorpionSelector>();
-        if (selector == null)
-            throw new MissingReferenceException();
     }
 
     // Update is called once per frame
     void Update()
     {
+		if (GetComponent<TimerRun>().InstructionsTimeLeft > 0)
+		{
+			return;
+		}
+
         if (LeftLegPressed || RightLegPressed)
         {
             //If you already raised a leg, just animate it
@@ -66,10 +70,12 @@ public class KeyboardController : MonoBehaviour
         {
             LeftLegPressed = true;
 
-            if (selector.EntryPoint == ScorpionSelector.EntryPoints.Left)
+            if (LeftLegKey == WinKey)
             {
                 // Signal WON
                 Debug.Log("You win...");
+
+				this.GetComponent<TimerRun>().MissionComplete = true;
             }
         }
 
@@ -77,11 +83,13 @@ public class KeyboardController : MonoBehaviour
         {
             RightLegPressed = true;
 
-            if (selector.EntryPoint == ScorpionSelector.EntryPoints.Right)
+            if (RightLegKey == WinKey)
             {
                 // Signal WON
                 Debug.Log("You win...");
-            }
+
+				this.GetComponent<TimerRun>().MissionComplete = true;
+			}
         }
     }
 }

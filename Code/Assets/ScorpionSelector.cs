@@ -6,6 +6,8 @@ public class ScorpionSelector : MonoBehaviour
 
     private EntryPoints entryPoint;
 
+	public KeyboardController Keyboard;
+
     public EntryPoints EntryPoint
     {
         get { return entryPoint; }
@@ -20,12 +22,16 @@ public class ScorpionSelector : MonoBehaviour
             Debug.Log("Scorpion will enter from Left...");
             entryPoint = EntryPoints.Left;
 
+			Keyboard.WinKey = KeyCode.E;
+
             this.transform.position = LeftEntryPoint.position;
         }
         else
         {
             Debug.Log("Scorpion will enter from Right...");
             entryPoint = EntryPoints.Right;
+
+			Keyboard.WinKey = KeyCode.W;
 
             this.transform.position = RightEntryPoint.position;
 
