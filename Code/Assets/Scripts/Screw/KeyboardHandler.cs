@@ -61,6 +61,8 @@ public class KeyboardHandler : MonoBehaviour {
 
 				if (WoodPlank != null)
 				{
+                    Timer.MissionFailed = true; //We failed
+
 					//-0.4
 					if (WoodPlank.transform.position.y > -0.4f)
 					{
@@ -71,6 +73,8 @@ public class KeyboardHandler : MonoBehaviour {
 					else 
 					{
 						Bang.gameObject.SetActive(true);
+
+                     
 
 						if (!soundPlayed)
 						{

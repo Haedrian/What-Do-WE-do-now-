@@ -257,6 +257,10 @@ Prefab:
       propertyPath: InstructionsTransform
       value: 
       objectReference: {fileID: 1085034179}
+    - target: {fileID: 11464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: Background
+      value: 
+      objectReference: {fileID: 1623224486}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
   m_RootGameObject: {fileID: 1206920566}
@@ -583,7 +587,7 @@ MonoBehaviour:
   InstructionsTransform: {fileID: 1085034179}
   Sound: {fileID: 0}
   InstructionsTimeLeft: 0
-  Background: {fileID: 0}
+  Background: {fileID: 1623224486}
   MissionComplete: 0
   MissionFailed: 0
 --- !u!212 &1206920568
