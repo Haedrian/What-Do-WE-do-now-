@@ -94,6 +94,11 @@ public class KeyboardHandler : MonoBehaviour {
 				
 				this.GetComponent<TimerRun>().MissionComplete = true;
 			}
+            else
+            {
+                //You lost, 
+                this.GetComponent<TimerRun>().MissionFailed = true;
+            }
 		}
 		
 		if (Input.GetKeyDown(DontScrew))

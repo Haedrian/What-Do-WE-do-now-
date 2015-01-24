@@ -8,6 +8,8 @@ public class DCKeyboardController : MonoBehaviour
 
 	public AudioSource Explosion;
 
+    public Transform Splint;
+
     /// <summary>
     /// Determines which value of the possible enumeration indicates that the win condition has been reached.
     /// </summary>
@@ -36,7 +38,7 @@ public class DCKeyboardController : MonoBehaviour
         if (this._keyPressed)
             return;
 
-        if (this.Timer.InstructionsMaxSeconds > 0)
+        if (this.Timer.InstructionsTimeLeft > 0)
         {
             return; //Instructions still showing
         }
@@ -67,6 +69,9 @@ public class DCKeyboardController : MonoBehaviour
             {
 				Timer.MissionComplete = true;
             }
+
+            //remove the splint
+            Splint.gameObject.SetActive(false);
         }
 
         if (this._ignite)
