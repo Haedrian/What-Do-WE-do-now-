@@ -25,14 +25,14 @@ public class MainMenuKeyboard : MonoBehaviour {
     {
         if (PlayerPrefs.HasKey("lastScore"))
         {
-            GUI.color = Color.black;
+            GUI.color = Color.white;
 
             var leftStyle = GUI.skin.GetStyle("Label");
-            leftStyle.alignment = TextAnchor.MiddleLeft;
-            leftStyle.fontSize = 60;
+            leftStyle.alignment = TextAnchor.MiddleRight;
+            leftStyle.fontSize = 55;
             leftStyle.fontStyle = FontStyle.Bold;
 
-            GUI.Label(new Rect(10, Screen.height - 50, Screen.width - 10, 60), "You survived " + PlayerPrefs.GetInt("lastScore").ToString() + " events", leftStyle);
+            GUI.Label(new Rect(10, Screen.height - 50, Screen.width - 10, 60),PlayerPrefs.GetInt("lastScore").ToString(), leftStyle);
         }
     }
 }

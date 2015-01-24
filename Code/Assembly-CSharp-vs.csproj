@@ -64,7 +64,6 @@
      <Compile Include="Assets\Scripts\Marco\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Marco\CharacterController2D.cs" />
      <Compile Include="Assets\Scripts\Marco\EnemyAI.cs" />
-     <Compile Include="Assets\Scripts\Marco\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\Marco\SelfDestruct.cs" />
      <Compile Include="Assets\Scripts\Pills\KeyboardControllerPills.cs" />
      <Compile Include="Assets\Scripts\Scorpion\ScorpionScript.cs" />
