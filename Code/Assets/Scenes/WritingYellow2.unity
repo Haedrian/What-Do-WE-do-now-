@@ -263,7 +263,7 @@ MonoBehaviour:
   W: 119
   A: {fileID: 305405860}
   F: {fileID: 1555866331}
-  WinKey: 101
+  WinKey: 119
 --- !u!1 &1555866329
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 683231af6d29fee4588fa26680e6ccb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6460259f9959f6f4d892baa71d3ba5a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1642981573
 Transform:
