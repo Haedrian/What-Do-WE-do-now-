@@ -13,6 +13,7 @@ public class KeyboardHandler : MonoBehaviour {
 	public Transform Hand;
 	public Transform Bang;
 	public AudioSource Smack;
+    public AudioSource Squeak;
 
 	private bool soundPlayed;
 
@@ -75,6 +76,7 @@ public class KeyboardHandler : MonoBehaviour {
 						{
 							Smack.time = 0.15f;
 							Smack.Play();
+                            Squeak.Play();
 							soundPlayed = true;
 						}
 					}
