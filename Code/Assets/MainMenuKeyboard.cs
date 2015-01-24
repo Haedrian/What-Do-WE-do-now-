@@ -4,8 +4,10 @@ using System.Collections;
 public class MainMenuKeyboard : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+    {
+	    //Clear the scenes from prefs
+        PlayerPrefs.DeleteKey("scenes");
 	}
 	
 	// Update is called once per frame
