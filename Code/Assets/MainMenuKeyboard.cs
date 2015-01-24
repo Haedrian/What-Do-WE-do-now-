@@ -16,6 +16,23 @@ public class MainMenuKeyboard : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.W))
 		{
 			Application.LoadLevel(0); //Start the game
+            PlayerPrefs.SetInt("lastScore", 0);
+            PlayerPrefs.Save();
 		}
 	}
+
+    void OnGUI()
+    {
+        if (PlayerPrefs.HasKey("lastScore"))
+        {
+            GUI.color = Color.black;
+
+            var leftStyle = GUI.skin.GetStyle("Label");
+            leftStyle.alignment = TextAnchor.MiddleLeft;
+            leftStyle.fontSize = 60;
+            leftStyle.fontStyle = FontStyle.Bold;
+
+            GUI.Label(new Rect(10, Screen.height - 50, Screen.width - 10, 60), "You survived " + PlayerPrefs.GetInt("lastScore").ToString() + " events", leftStyle);
+        }
+    }
 }

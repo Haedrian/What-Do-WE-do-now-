@@ -46,6 +46,14 @@ public class LoadAtRandom : MonoBehaviour {
 
             PlayerPrefs.Save();
 
+            //Increase the score
+            int score = PlayerPrefs.GetInt("lastScore");
+            score++;
+
+            PlayerPrefs.SetInt("lastScore", score);
+
+            PlayerPrefs.Save();
+
 			Application.LoadLevel(sceneRandom);
 		}
 	}
