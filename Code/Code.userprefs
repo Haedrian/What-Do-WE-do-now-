@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LoadAtRandom.cs">
     <Files>
       <File FileName="..\..\..\..\Dropbox\Development\Unity\DodoVsLlama\DvL\Assets\Scripts\BonusEffectScript.cs" Line="1" Column="1" />
       <File FileName="Assets\ScorpionScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\KeyboardController.cs" Line="41" Column="11" />
-      <File FileName="Assets\LoadAtRandom.cs" Line="15" Column="27" />
+      <File FileName="Assets\KeyboardController.cs" Line="1" Column="1" />
+      <File FileName="Assets\LoadAtRandom.cs" Line="14" Column="3" />
       <File FileName="Assets\KeepScore.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Zombie\AxeAnimation.cs" Line="1" Column="1" />
       <File FileName="Assets\ScorpionSelector.cs" Line="1" Column="1" />
