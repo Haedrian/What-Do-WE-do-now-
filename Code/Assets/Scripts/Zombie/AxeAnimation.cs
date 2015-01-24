@@ -12,7 +12,7 @@ public class AxeAnimation : MonoBehaviour {
 	void Start () 
 	{
 		AnimationTimeLeft = MaxAnimationTime;
-		RotationPoint = new Vector3(4.24f,3.31f,-1f);
+		RotationPoint = new Vector3(2.87f,3.25f,-1f);
 		RotationPoint.x = 0;
 	}
 	
