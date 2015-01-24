@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21264300}
   - 114: {fileID: 11464300}
   m_Layer: 0
-  m_Name: timer
+  m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,6 +41,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeMaxSeconds: 4
+  InstructionsMaxSeconds: 2
+  InstructionsTransform: {fileID: 0}
+  Sound: {fileID: 0}
+  InstructionsTimeLeft: 0
+  MissionComplete: 0
 --- !u!212 &21264300
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,6 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LoadAtRandom.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TimerRun.cs">
     <Files>
       <File FileName="..\..\..\..\Dropbox\Development\Unity\DodoVsLlama\DvL\Assets\Scripts\BonusEffectScript.cs" Line="1" Column="1" />
       <File FileName="Assets\KeyboardController.cs" Line="1" Column="1" />
@@ -8,6 +8,8 @@
       <File FileName="Assets\KeepScore.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Zombie\AxeAnimation.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Pills\KeyboardControllerPills.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DynamiteCandle\DCKeyboardController.cs" Line="48" Column="46" />
+      <File FileName="Assets\TimerRun.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
