@@ -12,8 +12,7 @@ public class AxeAnimation : MonoBehaviour {
 	void Start () 
 	{
 		AnimationTimeLeft = MaxAnimationTime;
-		RotationPoint = new Vector3(2.87f,3.25f,-1f);
-		RotationPoint.x = 0;
+		RotationPoint = new Vector3(-3.26f,3.9f,-1f);
 	}
 	
 	// Update is called once per frame
@@ -31,6 +30,6 @@ public class AxeAnimation : MonoBehaviour {
 		//Get as fraction
 		double fraction = Time.deltaTime / MaxAnimationTime;
 
-		this.transform.RotateAround(RotationPoint,Vector3.forward, (float) (-90* fraction));
+		this.transform.RotateAround(RotationPoint,Vector3.forward, (float) (-135* fraction));
 	}
 }
