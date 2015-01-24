@@ -48,10 +48,11 @@ public class KeyboardHandler : MonoBehaviour {
 				if (ScrewItem != null)
 				{
 					ScrewItem.gameObject.SetActive(false);
+					Hand.gameObject.SetActive(false);
 				}
 
 				ScrewDriver.gameObject.SetActive(false);
-				Hand.gameObject.SetActive(false);
+
 
 				if (WoodPlank != null)
 				{
