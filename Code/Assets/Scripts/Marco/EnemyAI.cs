@@ -20,8 +20,12 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.gameObject.tag == CollisionTarget)
         {
-            Debug.Log("Die player, die!");
-            // Notify loss...
+            TimerRun timer = GameObject.Find("Controller").GetComponent<TimerRun>();
+            if (timer != null)
+            {
+                timer.MissionFailed = true;
+                Debug.Log("Mission has failed...");
+            }
         }
     }
 }

@@ -1,53 +1,54 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TimerRun : MonoBehaviour {
+public class TimerRun : MonoBehaviour
+{
 
-	public double TimeMaxSeconds = 4;
-	public double InstructionsMaxSeconds = 2;
+    public double TimeMaxSeconds = 4;
+    public double InstructionsMaxSeconds = 2;
 
-	public Transform InstructionsTransform;
-	public AudioSource Sound;
+    public Transform InstructionsTransform;
+    public AudioSource Sound;
 
-	public double InstructionsTimeLeft;
-	private double TimeLeft {get;set;}
-	private float MaxScale {get;set;}
+    public double InstructionsTimeLeft;
+    private double TimeLeft { get; set; }
+    private float MaxScale { get; set; }
 
     /// <summary>
     /// The background of the scene
     /// </summary>
     public Transform Background;
 
-	/// <summary>
-	/// Whether the player has pressed the right button or not
-	/// </summary>
-	public bool MissionComplete = false;
+    /// <summary>
+    /// Whether the player has pressed the right button or not
+    /// </summary>
+    public bool MissionComplete = false;
 
     /// <summary>
     /// Whether the player has irrevokably failed his mission
     /// </summary>
     public bool MissionFailed = false;
 
-	// Use this for initialization
-	void Start () 
-	{
-		TimeLeft = TimeMaxSeconds;
-		MaxScale = this.transform.localScale.x;
+    // Use this for initialization
+    void Start()
+    {
+        TimeLeft = TimeMaxSeconds;
+        MaxScale = this.transform.localScale.x;
 
-		InstructionsTimeLeft = InstructionsMaxSeconds;
-	}
+        InstructionsTimeLeft = InstructionsMaxSeconds;
+    }
 
     private Color? oldColour = null;
     private double flashTimeLeft = 0.25f;
 
-	// Update is called once per frame
-	void Update () 
-	{
-		if (InstructionsTimeLeft > 0)
-		{
-			InstructionsTimeLeft -= Time.deltaTime;
-			return;
-		}
+    // Update is called once per frame
+    void Update()
+    {
+        if (InstructionsTimeLeft > 0)
+        {
+            InstructionsTimeLeft -= Time.deltaTime;
+            return;
+        }
 
         if (MissionFailed && this.Background != null)
         {
@@ -55,18 +56,18 @@ public class TimerRun : MonoBehaviour {
             {
                 flashTimeLeft -= Time.deltaTime;
 
-				if (oldColour == null)
-				{
-	                var newColour = this.Background.GetComponent<SpriteRenderer>().color;
-	                oldColour = new Color(newColour.r,newColour.g,newColour.b,newColour.a);
+                if (oldColour == null)
+                {
+                    var newColour = this.Background.GetComponent<SpriteRenderer>().color;
+                    oldColour = new Color(newColour.r, newColour.g, newColour.b, newColour.a);
 
-	                //Red the background
-	                newColour.g = 0;
-	                newColour.r = 1;
-	                newColour.b = 0;
+                    //Red the background
+                    newColour.g = 0;
+                    newColour.r = 1;
+                    newColour.b = 0;
 
-	                this.Background.GetComponent<SpriteRenderer>().color = newColour;
-				}
+                    this.Background.GetComponent<SpriteRenderer>().color = newColour;
+                }
             }
             else
             {
@@ -75,42 +76,42 @@ public class TimerRun : MonoBehaviour {
             }
         }
 
-		//Hide the transform
-		InstructionsTransform.gameObject.SetActive (false);
+        //Hide the transform
+        InstructionsTransform.gameObject.SetActive(false);
 
-		if (Sound != null && !Sound.isPlaying)
-		{
-			Sound.Play();
-		}
-	
-		TimeLeft -= Time.deltaTime;
+        if (Sound != null && !Sound.isPlaying)
+        {
+            Sound.Play();
+        }
 
-		TimeLeft = TimeLeft < 0 ? 0 : TimeLeft;
+        TimeLeft -= Time.deltaTime;
 
-		if (TimeMaxSeconds != 0) 
-		{
-			//Check what %age of time is lost
-			double percentage = TimeLeft / TimeMaxSeconds;
+        TimeLeft = TimeLeft < 0 ? 0 : TimeLeft;
 
-			Vector3 temp = this.transform.localScale;
-			temp.x = (float) percentage * MaxScale;
+        if (TimeMaxSeconds != 0)
+        {
+            //Check what %age of time is lost
+            double percentage = TimeLeft / TimeMaxSeconds;
 
-			this.transform.localScale = temp;
-		}
+            Vector3 temp = this.transform.localScale;
+            temp.x = (float)percentage * MaxScale;
 
-		if (TimeLeft <= 0)
-		{
-			//Time's up, Was the player successful?
-			if (MissionComplete)
-			{
-				//Load the next one
-				Application.LoadLevel(0);
-			}
-			else 
-			{
-				//Failure
-				Application.LoadLevel(6); //Main Menu
-			}
-		}
-	}
+            this.transform.localScale = temp;
+        }
+
+        if (TimeLeft <= 0)
+        {
+            //Time's up, Was the player successful?
+            if (MissionComplete)
+            {
+                //Load the next one
+                Application.LoadLevel(0);
+            }
+            else
+            {
+                //Failure
+                Application.LoadLevel(6); //Main Menu
+            }
+        }
+    }
 }
