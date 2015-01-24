@@ -4,6 +4,11 @@ using System.Collections;
 public class TimerRun : MonoBehaviour {
 
 	public double TimeMaxSeconds = 4;
+	public double InstructionsMaxSeconds = 2;
+
+	public Transform InstructionsTransform;
+
+	private double InstructionsTimeLeft;
 	private double TimeLeft {get;set;}
 	private float MaxScale {get;set;}
 
@@ -17,11 +22,22 @@ public class TimerRun : MonoBehaviour {
 	{
 		TimeLeft = TimeMaxSeconds;
 		MaxScale = this.transform.localScale.x;
+
+		InstructionsTimeLeft = InstructionsMaxSeconds;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if (InstructionsTimeLeft > 0)
+		{
+			InstructionsTimeLeft -= Time.deltaTime;
+			return;
+		}
+
+		//Hide the transform
+		InstructionsTransform.gameObject.SetActive (false);
+
 		TimeLeft -= Time.deltaTime;
 
 		TimeLeft = TimeLeft < 0 ? 0 : TimeLeft;
