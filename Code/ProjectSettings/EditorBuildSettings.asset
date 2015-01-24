@@ -27,3 +27,5 @@ EditorBuildSettings:
     path: Assets/Scenes/WritingYellow2.unity
   - enabled: 1
     path: Assets/Scenes/Winner.unity
+  - enabled: 1
+    path: Assets/Scenes/Start.unity

@@ -21,8 +21,11 @@ public class LoadAtRandom : MonoBehaviour {
 			{
 				SceneNumbers = new List<int>();
 			}
-            //It's a comma delimited set of ids
-            SceneNumbers = PlayerPrefs.GetString("scenes").Split(',').Select(s => Int32.Parse(s)).ToList();
+			else 
+			{
+            	//It's a comma delimited set of ids
+            	SceneNumbers = PlayerPrefs.GetString("scenes").Split(',').Select(s => Int32.Parse(s)).ToList();
+			}
         }
 
 		if (SceneNumbers.Count <= 0)
