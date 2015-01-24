@@ -641,6 +641,7 @@ MonoBehaviour:
   Hand: {fileID: 1024122657}
   Bang: {fileID: 567362552}
   Smack: {fileID: 26762712}
+  Squeak: {fileID: 1025377802}
   ScrewPressed: 0
   DontScrewPressed: 0
   WinKey: 119

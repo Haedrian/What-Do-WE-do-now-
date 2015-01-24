@@ -29,7 +29,7 @@ public class ThingsToDo : MonoBehaviour {
 
     void OnGUI()
     {
-        GUI.color = Color.black;
+        GUI.color = Color.gray;
 
         var leftStyle = GUI.skin.GetStyle("Label");
         leftStyle.alignment = TextAnchor.MiddleCenter;
@@ -44,6 +44,6 @@ public class ThingsToDo : MonoBehaviour {
             message = thingsToDo[Random.Range(0, thingsToDo.Count)];
         }
 
-        GUI.Label(new Rect(10, Screen.height - 50, Screen.width - 10, 60), message  , leftStyle);
+        GUI.Label(new Rect(10, Screen.height/2  + 50f, Screen.width - 10, 60), message  , leftStyle);
     }
 }
