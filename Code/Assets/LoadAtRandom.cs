@@ -10,13 +10,7 @@ public class LoadAtRandom : MonoBehaviour {
 	public List<int> SceneNumbers;
 
 	// Use this for initialization
-	void Start () 
-	{
-		DontDestroyOnLoad (gameObject);
-	}
-	
-	// Update is called once per frame
-	void Update () 
+	void Awake () 
 	{
 		if (SceneNumbers.Count  <= 0)
 		{
@@ -25,11 +19,18 @@ public class LoadAtRandom : MonoBehaviour {
 		else 
 		{
 			int sceneRandom = SceneNumbers [Random.Range(0,(SceneNumbers.Count))];
-
+			
 			//Remove the scene number from the list
 			SceneNumbers.Remove (sceneRandom);
-
+			
 			Application.LoadLevel (sceneRandom);
 		}
+
+
+	}
+	
+	// Update is called once per frame
+	void Update () 
+	{
 	}
 }
