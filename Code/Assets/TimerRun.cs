@@ -52,6 +52,11 @@ public class TimerRun : MonoBehaviour
 
         if (MissionFailed && this.Background != null)
         {
+            if (this.TimeLeft > 1)
+            {
+                this.TimeLeft = 1; //Reduce to 1 second
+            }
+
             if (flashTimeLeft > 0)
             {
                 flashTimeLeft -= Time.deltaTime;
