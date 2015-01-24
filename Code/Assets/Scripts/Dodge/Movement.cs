@@ -108,6 +108,7 @@ public class Movement : MonoBehaviour {
     {
         //You lose!
         controller.MissionComplete = false;
+        controller.MissionFailed = true;
     }
 
     void FixedUpdate()

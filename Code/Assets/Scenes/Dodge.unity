@@ -179,6 +179,10 @@ Prefab:
       propertyPath: TimeMaxSeconds
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: Background
+      value: 
+      objectReference: {fileID: 1508786506}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
   m_RootGameObject: {fileID: 1227868166}
@@ -244,7 +248,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994920397}
-  m_Mass: 1
+  m_Mass: 150
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -455,7 +459,9 @@ MonoBehaviour:
   InstructionsTransform: {fileID: 418538028}
   Sound: {fileID: 0}
   InstructionsTimeLeft: 0
+  Background: {fileID: 1508786506}
   MissionComplete: 1
+  MissionFailed: 0
 --- !u!212 &1227868168
 SpriteRenderer:
   m_ObjectHideFlags: 0
