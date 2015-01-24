@@ -24,6 +24,7 @@ public class LoadAtRandom : MonoBehaviour {
 		if (SceneNumbers.Count <= 0)
 		{
 			//Player won!
+            Application.LoadLevel(9);
 		}
 		else
 		{
