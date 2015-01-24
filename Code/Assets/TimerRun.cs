@@ -7,6 +7,7 @@ public class TimerRun : MonoBehaviour {
 	public double InstructionsMaxSeconds = 2;
 
 	public Transform InstructionsTransform;
+	public AudioSource Sound;
 
 	private double InstructionsTimeLeft;
 	private double TimeLeft {get;set;}
@@ -38,6 +39,11 @@ public class TimerRun : MonoBehaviour {
 		//Hide the transform
 		InstructionsTransform.gameObject.SetActive (false);
 
+		if (Sound != null && !Sound.isPlaying)
+		{
+			Sound.Play();
+		}
+	
 		TimeLeft -= Time.deltaTime;
 
 		TimeLeft = TimeLeft < 0 ? 0 : TimeLeft;
