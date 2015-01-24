@@ -4,6 +4,8 @@ public class DCKeyboardController : MonoBehaviour
 {
     public KeyCode Ignite = KeyCode.W, DoNothing = KeyCode.E;
 
+	public TimerRun Timer;
+
     /// <summary>
     /// Determines which value of the possible enumeration indicates that the win condition has been reached.
     /// </summary>
@@ -40,7 +42,7 @@ public class DCKeyboardController : MonoBehaviour
 
             if (WinCondition == WinConditions.Ignite)
             {
-                // Notify of win...
+				Timer.MissionComplete = true;
             }
         }
         else if (Input.GetKeyDown(DoNothing))
@@ -51,7 +53,7 @@ public class DCKeyboardController : MonoBehaviour
 
             if (WinCondition == WinConditions.DoNothing)
             {
-                // Notify of win...
+				Timer.MissionComplete = true;
             }
         }
 

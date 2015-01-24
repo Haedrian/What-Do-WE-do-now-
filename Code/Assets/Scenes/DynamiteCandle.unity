@@ -117,6 +117,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 7.04809141
       objectReference: {fileID: 0}
+    - target: {fileID: 11464300, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
+      propertyPath: InstructionsTransform
+      value: 
+      objectReference: {fileID: 1727421036}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c5d9fd3ca24d4045b9615e7aabe9ae4, type: 2}
   m_RootGameObject: {fileID: 1411791019}
@@ -605,6 +609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ignite: 119
   DoNothing: 101
+  Timer: {fileID: 1411791020}
   WinCondition: 1
 --- !u!1 &1154803209
 GameObject:
@@ -817,7 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeMaxSeconds: 4
   InstructionsMaxSeconds: 2
-  InstructionsTransform: {fileID: 0}
+  InstructionsTransform: {fileID: 1727421036}
   Sound: {fileID: 0}
   InstructionsTimeLeft: 0
   MissionComplete: 0
@@ -2078,7 +2083,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2118114449
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 07ba4d080841fef40a2ecfb4a3b43e08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2089,7 +2094,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1727421034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1.29999995, y: 1.29999995, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2159,4 +2164,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ignite: 119
   DoNothing: 101
+  Timer: {fileID: 1411791020}
   WinCondition: 0
