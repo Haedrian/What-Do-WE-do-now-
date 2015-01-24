@@ -6,6 +6,8 @@ public class DCKeyboardController : MonoBehaviour
 
 	public TimerRun Timer;
 
+	public AudioSource Explosion;
+
     /// <summary>
     /// Determines which value of the possible enumeration indicates that the win condition has been reached.
     /// </summary>
@@ -39,6 +41,11 @@ public class DCKeyboardController : MonoBehaviour
             this._keyPressed = true;
 
 			this._ignite = true;
+
+			if (this.Explosion != null)
+			{
+				this.Explosion.Play();
+			}
 
             if (WinCondition == WinConditions.Ignite)
             {
