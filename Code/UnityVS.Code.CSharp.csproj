@@ -58,6 +58,7 @@
     <Compile Include="Assets\KeepScore.cs" />
     <Compile Include="Assets\KeyboardController.cs" />
     <Compile Include="Assets\LoadAtRandom.cs" />
+    <Compile Include="Assets\MainMenuKeyboard.cs" />
     <Compile Include="Assets\Scripts\DynamiteCandle\DCKeyboardController.cs" />
     <Compile Include="Assets\Scripts\DynamiteCandle\ObjectSelector.cs" />
     <Compile Include="Assets\Scripts\DynamiteCandle\ParticleSortLayerChanger.cs" />

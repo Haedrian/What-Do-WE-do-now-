@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Screw.unity
   - enabled: 1
     path: Assets/Scenes/DontScrew.unity
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity

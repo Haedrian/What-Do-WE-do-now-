@@ -70,7 +70,7 @@ public class TimerRun : MonoBehaviour {
 			else 
 			{
 				//Failure
-				//TODO: Failure
+				Application.LoadLevel(6); //Main Menu
 			}
 		}
 	}
