@@ -11,6 +11,10 @@ public class KeyboardHandler : MonoBehaviour {
 	public Transform ScrewDriver;
 	public Transform WoodPlank;
 	public Transform Hand;
+	public Transform Bang;
+	public AudioSource Smack;
+
+	private bool soundPlayed;
 
 	public bool ScrewPressed = false;
 	public bool DontScrewPressed = false;
@@ -62,6 +66,17 @@ public class KeyboardHandler : MonoBehaviour {
 						Vector3 pos = WoodPlank.transform.position;
 						pos.y -= 0.1f;
 						WoodPlank.transform.position = pos;
+					}
+					else 
+					{
+						Bang.gameObject.SetActive(true);
+
+						if (!soundPlayed)
+						{
+							Smack.time = 0.15f;
+							Smack.Play();
+							soundPlayed = true;
+						}
 					}
 				}
 			}
