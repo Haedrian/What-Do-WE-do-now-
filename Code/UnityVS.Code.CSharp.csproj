@@ -57,8 +57,10 @@
     <Compile Include="Assets\KeepScore.cs" />
     <Compile Include="Assets\KeyboardController.cs" />
     <Compile Include="Assets\LoadAtRandom.cs" />
-    <Compile Include="Assets\ScorpionScript.cs" />
-    <Compile Include="Assets\ScorpionSelector.cs" />
+    <Compile Include="Assets\Scripts\DynamiteCandle\ObjectSelector.cs" />
+    <Compile Include="Assets\Scripts\DynamiteCandle\ParticleSortLayerChanger.cs" />
+    <Compile Include="Assets\Scripts\Scorpion\ScorpionScript.cs" />
+    <Compile Include="Assets\Scripts\Scorpion\ScorpionSelector.cs" />
     <Compile Include="Assets\Scripts\Zombie\AxeAnimation.cs" />
     <Compile Include="Assets\ShakeScript.cs" />
     <Compile Include="Assets\TimerRun.cs" />
