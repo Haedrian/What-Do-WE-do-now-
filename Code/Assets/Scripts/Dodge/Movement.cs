@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour {
     public static int ACC = 2;
     public static int MAXSPEED = 10;
 
+    public AudioSource Smack;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -109,6 +111,11 @@ public class Movement : MonoBehaviour {
         //You lose!
         controller.MissionComplete = false;
         controller.MissionFailed = true;
+
+        if (Smack != null)
+        {
+            Smack.Play();
+        }
     }
 
     void FixedUpdate()

@@ -266,6 +266,7 @@ MonoBehaviour:
   A: {fileID: 305405860}
   F: {fileID: 1555866331}
   WinKey: 101
+  Scribble: {fileID: 1731557518}
 --- !u!1 &1555866329
 GameObject:
   m_ObjectHideFlags: 0
