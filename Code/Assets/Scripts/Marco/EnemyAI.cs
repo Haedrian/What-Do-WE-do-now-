@@ -6,6 +6,8 @@ public class EnemyAI : MonoBehaviour
 
     public bool IsMoving = false;
 
+    public bool IsInvincible = false;
+
     void Update()
     {
         if (IsMoving)
@@ -20,21 +22,37 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.gameObject.tag == CollisionTarget)
         {
-            float yVelocity = collision.gameObject.transform.rigidbody2D.velocity.y;
-
-            if (yVelocity < 0)
+            if (collision.gameObject.tag == "Player")
             {
-                Debug.Log("Enemy will lose..." + yVelocity);
+                GameObject timerObject = GameObject.Find("Controller");
+                if (timerObject == null)
+                    throw new MissingReferenceException();
 
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                Debug.Log("Player will lose..." + yVelocity);
+                TimerRun timer = timerObject.GetComponent<TimerRun>();
+                if (timer == null)
+                    throw new MissingComponentException();
 
-                TimerRun timer = GameObject.Find("Controller").GetComponent<TimerRun>();
-                if (timer != null)
+                if (IsInvincible)
+                {
+                    timer.MissionComplete = false;
                     timer.MissionFailed = true;
+                }
+                else
+                {
+                    float yVelocity = collision.gameObject.transform.rigidbody2D.velocity.y;
+
+                    if (yVelocity < 0)
+                    {
+                        Debug.Log("Enemy will lose..." + yVelocity);
+
+                        Destroy(this.gameObject);
+                    }
+                    else
+                    {
+                        timer.MissionComplete = false;
+                        timer.MissionFailed = true;
+                    }
+                }
             }
         }
     }
