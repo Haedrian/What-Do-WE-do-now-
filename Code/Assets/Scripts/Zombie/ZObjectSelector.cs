@@ -9,19 +9,14 @@ public class ZObjectSelector : MonoBehaviour
         IsZombieScene = System.Convert.ToBoolean(Random.Range(0, 2));
         Debug.Log("Is Zombie Scene? " + IsZombieScene);
 
-        GameObject ladder = GameObject.Find("Ladder");
+        GameObject ladder1 = GameObject.Find("Ladder1"), zombie = GameObject.Find("Zombie");
 
         if (this.IsZombieScene)
         {
-        }
-        else
-        {
-            LadderController ladderController = ladder.GetComponent<LadderController>();
-
-            if (ladderController == null)
-                throw new MissingComponentException();
-
-            ladderController.enabled = true;
+            zombie.GetComponent<SkinnedMeshRenderer>().enabled = true;
+            zombie.GetComponent<AudioSource>().enabled = true;
+            zombie.GetComponent<ZombieController>().enabled = true;
+            zombie.GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 }

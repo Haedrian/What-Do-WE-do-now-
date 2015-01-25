@@ -10,6 +10,10 @@ public class LadderController : MonoBehaviour
 
     private Vector3 RotationPoint;
 
+    public GameObject Player;
+
+    public bool ShouldRotate = false;
+
     void Start()
     {
         if (Timer == null)
@@ -34,11 +38,23 @@ public class LadderController : MonoBehaviour
         //Get as fraction
         double fraction = Time.deltaTime / MaxAnimationTime;
 
-        this.transform.RotateAround(RotationPoint, Vector3.forward, (float)(-180 * fraction));
+        if (ShouldRotate)
+            this.transform.RotateAround(RotationPoint, Vector3.forward, (float)(-180 * fraction));
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Timer.MissionFailed = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            Timer.MissionFailed = true;
+
+            if (Player != null)
+            {
+                Player.animation.Play("die");
+
+                ZKeyboardController keyController = GameObject.Find("SceneController").GetComponent<ZKeyboardController>();
+                keyController.enabled = false;
+            }
+        }
     }
 }
