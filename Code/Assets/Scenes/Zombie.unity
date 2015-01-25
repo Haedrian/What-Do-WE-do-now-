@@ -2526,8 +2526,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1517380442}
   - 114: {fileID: 1517380441}
+  - 114: {fileID: 1517380443}
   m_Layer: 0
-  m_Name: KeyController
+  m_Name: SceneController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2559,6 +2560,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &1517380443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517380440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881cf558da8193d49b6ca0235d8a37e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsZombieScene: 0
 --- !u!1 &1623462667
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,7 +2822,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1791690068}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e40d337ff5a4f3043b96f8eaa1a42036, type: 3}
   m_Name: 
