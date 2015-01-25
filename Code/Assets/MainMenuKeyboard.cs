@@ -19,6 +19,10 @@ public class MainMenuKeyboard : MonoBehaviour {
             PlayerPrefs.SetInt("lastScore", 0);
             PlayerPrefs.Save();
 		}
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            Application.LoadLevel(14); //Credits
+        }
 	}
 
     void OnGUI()

@@ -52,6 +52,7 @@
      <Compile Include="Assets\KeyboardController.cs" />
      <Compile Include="Assets\LoadAtRandom.cs" />
      <Compile Include="Assets\MainMenuKeyboard.cs" />
+     <Compile Include="Assets\ReturnToMainMenu.cs" />
      <Compile Include="Assets\Scripts\Collect\Disappear.cs" />
      <Compile Include="Assets\Scripts\Collect\LoseScript.cs" />
      <Compile Include="Assets\Scripts\Collect\MovementCollect.cs" />
@@ -73,6 +74,7 @@
      <Compile Include="Assets\Scripts\Yellow\YellowKeyboardController.cs" />
      <Compile Include="Assets\Scripts\Zombie\LadderController.cs" />
      <Compile Include="Assets\Scripts\Zombie\ZKeyboardController.cs" />
+     <Compile Include="Assets\Scripts\Zombie\ZObjectSelector.cs" />
      <Compile Include="Assets\ShakeScript.cs" />
      <Compile Include="Assets\ThingsToDo.cs" />
      <Compile Include="Assets\TimerRun.cs" />
