@@ -3102,7 +3102,7 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
-  animationData: {fileID: 0}
+  animationData: {fileID: 11400000, guid: 38db1ddc54fb44d35a35c8901a1bf261, type: 2}
   animationDataGUID: 38db1ddc54fb44d35a35c8901a1bf261
   mMaterialSource:
   - {fileID: 2100000, guid: 1f23f1bb4cc2e4cf7bc155f61799f5a4, type: 2}
@@ -13058,6 +13058,7 @@ MonoBehaviour:
   DropLadder: 119
   TieShoeLaces: 101
   Target: {fileID: 1905407972}
+  timer: {fileID: 533064377}
 --- !u!4 &1517380442
 Transform:
   m_ObjectHideFlags: 0
@@ -14000,7 +14001,7 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
-  animationData: {fileID: 0}
+  animationData: {fileID: 11400000, guid: 216e1aacc148e4bbbb009ce38d8a99b2, type: 2}
   animationDataGUID: 216e1aacc148e4bbbb009ce38d8a99b2
   mMaterialSource:
   - {fileID: 2100000, guid: d4afcf645dc90407185787ce44972f01, type: 2}

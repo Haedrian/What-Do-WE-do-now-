@@ -7,14 +7,16 @@ public class YellowKeyboardController : MonoBehaviour {
 	public KeyCode E = KeyCode.E;
 	public KeyCode W = KeyCode.W;
 	
-	public Transform A;
-	public Transform F;
+	public Transform Correct;
+	public Transform Incorrect;
+    public Transform Base;
 
 	public KeyCode WinKey = KeyCode.E;
 
 	private bool ButtonPressed;
 
-    public AudioSource Scribble;
+    public AudioSource CorrectSound;
+    public AudioSource WrongSound;
 
 	// Use this for initialization
 	void Start () 
@@ -37,34 +39,38 @@ public class YellowKeyboardController : MonoBehaviour {
 
 		if (Input.GetKeyDown(W))
 		{
-            Scribble.Play();
-
 			ButtonPressed = true;
 			
 			if (W == WinKey)
 			{
 				this.GetComponent<TimerRun>().MissionComplete = true;
-				A.gameObject.SetActive(true);
+				Base.gameObject.SetActive(false);
+                Correct.gameObject.SetActive(true);
+                CorrectSound.Play();
 			}
 			else 
 			{
-                F.gameObject.SetActive(true);
+                Base.gameObject.SetActive(false);
+                Incorrect.gameObject.SetActive(true);
+                WrongSound.Play();
 			}
 		}
 		else if (Input.GetKeyDown(E))
 		{
-            Scribble.Play();
-
 			ButtonPressed = true;
 			
 			if (E == WinKey)
 			{
 				this.GetComponent<TimerRun>().MissionComplete = true;
-                A.gameObject.SetActive(true);
+                Base.gameObject.SetActive(false);
+                Correct.gameObject.SetActive(true);
+                CorrectSound.Play();
 			}
 			else 
 			{
-                F.gameObject.SetActive(true);
+                Base.gameObject.SetActive(false);
+                Incorrect.gameObject.SetActive(true);
+                WrongSound.Play();
 			}
 
 		}
