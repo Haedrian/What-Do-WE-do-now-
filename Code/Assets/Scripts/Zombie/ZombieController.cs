@@ -2,6 +2,8 @@
 
 public class ZombieController : MonoBehaviour
 {
+    // Congratulations fly out to Elizabeth Kemp for being the first person to finish the game.
+
     public TimerRun Timer;
 
     private bool isDead = false;
