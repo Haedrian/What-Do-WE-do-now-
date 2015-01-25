@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Begin.cs" />
+     <Compile Include="Assets\Blink.cs" />
      <Compile Include="Assets\DontDestroyScript.cs" />
      <Compile Include="Assets\KeepScore.cs" />
      <Compile Include="Assets\KeyboardController.cs" />
