@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MainMenuKeyboard : MonoBehaviour {
 
+    public bool IsLoser = false;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -36,7 +38,14 @@ public class MainMenuKeyboard : MonoBehaviour {
             leftStyle.fontSize = 55;
             leftStyle.fontStyle = FontStyle.Bold;
 
-            GUI.Label(new Rect(10, Screen.height - 50, Screen.width - 10, 60),PlayerPrefs.GetInt("lastScore").ToString(), leftStyle);
+            if (IsLoser)
+            {
+                GUI.Label(new Rect(10, 30, Screen.width - 30, 60), PlayerPrefs.GetInt("lastScore").ToString(), leftStyle);
+            }
+            else
+            {
+                GUI.Label(new Rect(10, Screen.height - 50, Screen.width - 10, 60), PlayerPrefs.GetInt("lastScore").ToString(), leftStyle);
+            }
         }
     }
 }

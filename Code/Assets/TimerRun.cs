@@ -115,7 +115,7 @@ public class TimerRun : MonoBehaviour
             else
             {
                 //Failure
-                Application.LoadLevel(6); //Main Menu
+                Application.LoadLevel(15); //Loser Menu
             }
         }
     }
