@@ -13,6 +13,7 @@ public class KeyboardHandler : MonoBehaviour {
 	public Transform Hand;
 	public Transform Bang;
 	public AudioSource Smack;
+    public AudioSource Squeak;
 
 	private bool soundPlayed;
 
@@ -60,6 +61,8 @@ public class KeyboardHandler : MonoBehaviour {
 
 				if (WoodPlank != null)
 				{
+                    Timer.MissionFailed = true; //We failed
+
 					//-0.4
 					if (WoodPlank.transform.position.y > -0.4f)
 					{
@@ -71,10 +74,13 @@ public class KeyboardHandler : MonoBehaviour {
 					{
 						Bang.gameObject.SetActive(true);
 
+                     
+
 						if (!soundPlayed)
 						{
 							Smack.time = 0.15f;
 							Smack.Play();
+                            Squeak.Play();
 							soundPlayed = true;
 						}
 					}

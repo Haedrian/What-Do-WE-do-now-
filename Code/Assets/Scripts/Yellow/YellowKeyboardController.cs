@@ -14,6 +14,8 @@ public class YellowKeyboardController : MonoBehaviour {
 
 	private bool ButtonPressed;
 
+    public AudioSource Scribble;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -35,6 +37,8 @@ public class YellowKeyboardController : MonoBehaviour {
 
 		if (Input.GetKeyDown(W))
 		{
+            Scribble.Play();
+
 			ButtonPressed = true;
 			
 			if (W == WinKey)
@@ -49,6 +53,8 @@ public class YellowKeyboardController : MonoBehaviour {
 		}
 		else if (Input.GetKeyDown(E))
 		{
+            Scribble.Play();
+
 			ButtonPressed = true;
 			
 			if (E == WinKey)
