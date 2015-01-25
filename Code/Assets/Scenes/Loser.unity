@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 866009866}
   - 212: {fileID: 866009865}
+  - 114: {fileID: 866009867}
   m_Layer: 0
   m_Name: fuzzy
   m_TagString: Untagged
@@ -124,6 +125,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &866009867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 866009864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9562c90f238dc264a80ba0438a047b87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1373792175
 GameObject:
   m_ObjectHideFlags: 0
