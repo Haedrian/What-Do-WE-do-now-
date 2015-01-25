@@ -12,6 +12,8 @@ public class LadderController : MonoBehaviour
 
     public GameObject Player;
 
+    public AudioSource Clang;
+
     public bool ShouldRotate = false;
 
     void Start()
@@ -46,6 +48,15 @@ public class LadderController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+
+        if (Clang != null)
+        {
+            if (!Clang.isPlaying)
+            {
+                Clang.Play();
+            }
+        }
+
         if (collision.gameObject.tag == "Player")
         {
             Timer.MissionComplete = false;
@@ -58,6 +69,7 @@ public class LadderController : MonoBehaviour
                 ZKeyboardController keyController = GameObject.Find("SceneController").GetComponent<ZKeyboardController>();
                 keyController.enabled = false;
             }
+
         }
         else if (collision.gameObject.name == "ZombieHolder")
             this.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
