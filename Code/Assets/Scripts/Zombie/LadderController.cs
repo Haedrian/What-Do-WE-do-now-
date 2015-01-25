@@ -34,7 +34,7 @@ public class LadderController : MonoBehaviour
         //Get as fraction
         double fraction = Time.deltaTime / MaxAnimationTime;
 
-        this.transform.RotateAround(RotationPoint, Vector3.forward, (float)(-135 * fraction));
+        this.transform.RotateAround(RotationPoint, Vector3.forward, (float)(-180 * fraction));
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
