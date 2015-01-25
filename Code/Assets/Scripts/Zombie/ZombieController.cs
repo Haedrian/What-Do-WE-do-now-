@@ -16,6 +16,11 @@ public class ZombieController : MonoBehaviour
 
     void Update()
     {
+        if (Timer.InstructionsTimeLeft > 0)
+        {
+            return;
+        }
+
         if (!isDead)
         {
             Vector3 newPosition = this.transform.position;

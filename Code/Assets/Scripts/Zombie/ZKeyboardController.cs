@@ -7,6 +7,7 @@ public class ZKeyboardController : MonoBehaviour
     public GameObject Target;
     private BoxCollider2D TargetCollider;
     private Vector2 originalCenter, originalSize;
+    public TimerRun timer;
 
     private bool IsWalking = true;
 
@@ -26,6 +27,11 @@ public class ZKeyboardController : MonoBehaviour
 
     void Update()
     {
+        if (timer.InstructionsTimeLeft > 0)
+        {
+            return; //wait
+        }
+
         if (IsWalking)
         {
             Vector3 newPosition = Target.transform.position;

@@ -29,6 +29,11 @@ public class LadderController : MonoBehaviour
 
     void Update()
     {
+        if (Timer.InstructionsTimeLeft > 0)
+        {
+            return; // Wait
+        }
+
         AnimationTimeLeft -= Time.deltaTime;
 
         // 1 second grace period before the animation starts
