@@ -211,7 +211,9 @@ MonoBehaviour:
   InstructionsTransform: {fileID: 1704022208}
   Sound: {fileID: 0}
   InstructionsTimeLeft: 0
+  Background: {fileID: 0}
   MissionComplete: 0
+  MissionFailed: 0
 --- !u!212 &806138322
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ObjectSelector : MonoBehaviour
+public class DCObjectSelector : MonoBehaviour
 {
     public Transform[] PossibleObjects;
 

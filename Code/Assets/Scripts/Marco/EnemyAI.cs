@@ -20,11 +20,21 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.gameObject.tag == CollisionTarget)
         {
-            TimerRun timer = GameObject.Find("Controller").GetComponent<TimerRun>();
-            if (timer != null)
+            float yVelocity = collision.gameObject.transform.rigidbody2D.velocity.y;
+
+            if (yVelocity < 0)
             {
-                timer.MissionFailed = true;
-                Debug.Log("Mission has failed...");
+                Debug.Log("Enemy will lose..." + yVelocity);
+
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Debug.Log("Player will lose..." + yVelocity);
+
+                TimerRun timer = GameObject.Find("Controller").GetComponent<TimerRun>();
+                if (timer != null)
+                    timer.MissionFailed = true;
             }
         }
     }
