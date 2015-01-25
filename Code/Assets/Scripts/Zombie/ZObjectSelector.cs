@@ -9,7 +9,7 @@ public class ZObjectSelector : MonoBehaviour
         IsZombieScene = System.Convert.ToBoolean(Random.Range(0, 2));
         Debug.Log("Is Zombie Scene? " + IsZombieScene);
 
-        GameObject ladder1 = GameObject.Find("Ladder1"), zombie = GameObject.Find("Zombie");
+        GameObject zombie = GameObject.Find("Zombie");
 
         if (this.IsZombieScene)
         {
