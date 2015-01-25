@@ -10,7 +10,7 @@ public class HKeyboardController : MonoBehaviour
 
     public HWinConditions WinCondition;
 
-    public int MaximumActions = 3;
+    public int MaximumActions = 1;
 
     private int ActionsTaken = 0;
 
@@ -47,6 +47,11 @@ public class HKeyboardController : MonoBehaviour
         if (ActionsTaken >= MaximumActions)
             return;
 
+        if (Timer.InstructionsTimeLeft > 0)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(HammerIn))
         {
             ActionsTaken++;
@@ -63,9 +68,12 @@ public class HKeyboardController : MonoBehaviour
             if (WinCondition == HWinConditions.HammerIn)
                 Timer.MissionFailed = true;
 
-            Quaternion newRotation = Hammer.transform.rotation;
-            newRotation.z = 1f;
-            Hammer.transform.rotation = newRotation;
+            //Drop it!
+            Hammer.AddComponent<Rigidbody2D>();
+
+            //Quaternion newRotation = Hammer.transform.rotation;
+            //newRotation.z = 1f;
+            //Hammer.transform.rotation = newRotation;
         }
 
         if (ActionsTaken == MaximumActions && !Timer.MissionFailed)

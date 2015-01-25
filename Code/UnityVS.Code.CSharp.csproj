@@ -52,6 +52,9 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="SmoothMoves_Runtime">
+      <HintPath>Assets\SmoothMoves\Plugins\SmoothMoves\SmoothMoves_Runtime.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Begin.cs" />
@@ -66,19 +69,21 @@
     <Compile Include="Assets\Scripts\Dodge\Movement.cs" />
     <Compile Include="Assets\Scripts\Dodge\ObstacleCreation.cs" />
     <Compile Include="Assets\Scripts\DynamiteCandle\DCKeyboardController.cs" />
-    <Compile Include="Assets\Scripts\DynamiteCandle\ObjectSelector.cs" />
+    <Compile Include="Assets\Scripts\DynamiteCandle\DCObjectSelector.cs" />
     <Compile Include="Assets\Scripts\DynamiteCandle\ParticleSortLayerChanger.cs" />
     <Compile Include="Assets\Scripts\DynamiteCandle\SpriteRendererDisabler.cs" />
+    <Compile Include="Assets\Scripts\Hammer\HKeyboardController.cs" />
+    <Compile Include="Assets\Scripts\Hammer\HObjectSelector.cs" />
     <Compile Include="Assets\Scripts\Marco\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Marco\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Marco\EnemyAI.cs" />
-    <Compile Include="Assets\Scripts\Marco\SelfDestruct.cs" />
     <Compile Include="Assets\Scripts\Pills\KeyboardControllerPills.cs" />
     <Compile Include="Assets\Scripts\Scorpion\ScorpionScript.cs" />
     <Compile Include="Assets\Scripts\Scorpion\ScorpionSelector.cs" />
     <Compile Include="Assets\Scripts\Screw\KeyboardHandler.cs" />
     <Compile Include="Assets\Scripts\Yellow\YellowKeyboardController.cs" />
-    <Compile Include="Assets\Scripts\Zombie\AxeAnimation.cs" />
+    <Compile Include="Assets\Scripts\Zombie\LadderController.cs" />
+    <Compile Include="Assets\Scripts\Zombie\ZKeyboardController.cs" />
     <Compile Include="Assets\ShakeScript.cs" />
     <Compile Include="Assets\ThingsToDo.cs" />
     <Compile Include="Assets\TimerRun.cs" />
