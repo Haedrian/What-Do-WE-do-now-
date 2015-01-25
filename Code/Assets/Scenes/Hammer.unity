@@ -221,7 +221,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2118114449
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 801ba1c1d5faac3498293a57f3d6ac42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27a12a958c147ec4c88a974537b980b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1035756849
 Transform:
@@ -488,7 +488,7 @@ GameObject:
   - 212: {fileID: 1343268275}
   - 114: {fileID: 1343268276}
   m_Layer: 0
-  m_Name: plank
+  m_Name: nail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,8 +500,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1343268273}
-  m_LocalRotation: {x: 0, y: 0, z: -.418534845, w: .908200741}
-  m_LocalPosition: {x: -13.2510004, y: -4.75419998, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .0721810758, w: .997391582}
+  m_LocalPosition: {x: -15.0200005, y: -5.42000008, z: 0}
   m_LocalScale: {x: .8161484, y: .816148341, z: .816148341}
   m_Children: []
   m_Father: {fileID: 0}
@@ -526,7 +526,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2118114449
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c855142600e2214982b8d4f6b05123f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b70c43a082dcbb34ebcc28668a82e741, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1343268276
 MonoBehaviour:
