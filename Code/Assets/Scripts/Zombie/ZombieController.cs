@@ -30,7 +30,10 @@ public class ZombieController : MonoBehaviour
             return;
 
         if (collision.gameObject.tag == "Player")
+        {
+            Timer.MissionComplete = false;
             Timer.MissionFailed = true;
+        }
         else
         {
             this.isDead = true;

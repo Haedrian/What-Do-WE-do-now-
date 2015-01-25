@@ -19,6 +19,8 @@ public class LadderController : MonoBehaviour
         if (Timer == null)
             throw new MissingReferenceException();
 
+        Timer.MissionComplete = true;
+
         AnimationTimeLeft = MaxAnimationTime;
         RotationPoint = new Vector3(-3.26f, 3.9f, -1f);
     }
@@ -46,6 +48,7 @@ public class LadderController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Timer.MissionComplete = false;
             Timer.MissionFailed = true;
 
             if (Player != null)
@@ -56,5 +59,7 @@ public class LadderController : MonoBehaviour
                 keyController.enabled = false;
             }
         }
+        else if (collision.gameObject.name == "ZombieHolder")
+            this.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
     }
 }
