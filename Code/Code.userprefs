@@ -1,27 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DynamiteCandle\DCKeyboardController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TimerRun.cs">
     <Files>
-      <File FileName="Assets\Scripts\Yellow\YellowKeyboardController.cs" Line="41" Column="5" />
-      <File FileName="..\..\..\..\Dropbox\Development\Unity\DodoVsLlama\DvL\Assets\Scripts\BonusEffectScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\KeyboardController.cs" Line="1" Column="1" />
-      <File FileName="Assets\LoadAtRandom.cs" Line="57" Column="13" />
-      <File FileName="Assets\KeepScore.cs" Line="19" Column="1" />
-      <File FileName="Assets\Scripts\Zombie\AxeAnimation.cs" Line="37" Column="1" />
-      <File FileName="Assets\Scripts\Pills\KeyboardControllerPills.cs" Line="78" Column="2" />
-      <File FileName="Assets\TimerRun.cs" Line="117" Column="1" />
-      <File FileName="Assets\Scripts\Screw\KeyboardHandler.cs" Line="119" Column="1" />
-      <File FileName="Assets\DontDestroyScript.cs" Line="12" Column="14" />
-      <File FileName="Assets\Scripts\Dodge\Movement.cs" Line="103" Column="28" />
-      <File FileName="Assets\Scripts\Collect\LoseScript.cs" Line="12" Column="2" />
-      <File FileName="Assets\Scripts\DynamiteCandle\DCKeyboardController.cs" Line="71" Column="14" />
+      <File FileName="Assets\TimerRun.cs" Line="135" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Llama\Documents\GitHub\WeDontKnow\Code\Assets\LoadAtRandom.cs" line="50" />
-      <Breakpoint file="C:\Users\Llama\Documents\GitHub\WeDontKnow\Code\Assets\Scripts\DynamiteCandle\DCKeyboardController.cs" line="49" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

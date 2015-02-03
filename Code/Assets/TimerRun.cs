@@ -119,4 +119,22 @@ public class TimerRun : MonoBehaviour
             }
         }
     }
+
+	void OnGUI()
+	{
+		if (PlayerPrefs.HasKey("lastScore"))
+		{
+			GUI.color = Color.white;
+			
+			var leftStyle = GUI.skin.GetStyle("Label");
+			leftStyle.alignment = TextAnchor.MiddleRight;
+			leftStyle.fontSize = 55;
+			leftStyle.fontStyle = FontStyle.Bold;
+			
+
+			GUI.Label(new Rect(10, 30, Screen.width - 30, 60), PlayerPrefs.GetInt("lastScore").ToString(), leftStyle);
+
+		}
+
+	}
 }
