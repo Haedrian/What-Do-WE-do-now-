@@ -27,6 +27,11 @@ public class HKeyboardController : MonoBehaviour
 
     void Update()
     {
+		bool W = false;
+		bool E = false;
+
+		CheckKeyPresses (out W, out E);
+
         if (IsAnimating && Hammer.transform.rotation.z <= 0.7f)
         {
             Quaternion newRotation = Hammer.transform.rotation;
@@ -52,7 +57,7 @@ public class HKeyboardController : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(HammerIn))
+        if ((HammerIn == KeyCode.W && W) || (HammerIn == KeyCode.E && E))
         {
             ActionsTaken++;
 
@@ -61,7 +66,7 @@ public class HKeyboardController : MonoBehaviour
 
             IsAnimating = true;
         }
-        else if (Input.GetKeyDown(PullUp))
+        else if ((PullUp == KeyCode.E && E) || (PullUp == KeyCode.W && W))
         {
             ActionsTaken++;
 
@@ -79,6 +84,33 @@ public class HKeyboardController : MonoBehaviour
         if (ActionsTaken == MaximumActions && !Timer.MissionFailed)
             Timer.MissionComplete = true;
     }
+
+	void CheckKeyPresses(out bool W, out bool E)
+	{
+		W = Input.GetKey(KeyCode.W);
+		E = Input.GetKey(KeyCode.E);
+		
+		
+		foreach (Touch touch in Input.touches) 
+		{
+			if ( touch.phase != TouchPhase.Canceled && touch.phase != TouchPhase.Ended)
+			{
+				var pixelVector = touch.position;
+				
+				var viewPortClick = Camera.main.ScreenToViewportPoint(pixelVector);
+				if (viewPortClick.x < 0.25f)
+				{
+					W = true;
+				}
+				else if (viewPortClick.x > 0.75f)
+				{
+					E = true;
+				}
+			}
+		}
+		
+	}
+
 }
 
 public enum HWinConditions
@@ -86,3 +118,4 @@ public enum HWinConditions
     HammerIn = 0,
     PullUp = 1
 }
+

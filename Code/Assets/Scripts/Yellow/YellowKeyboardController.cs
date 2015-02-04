@@ -27,6 +27,11 @@ public class YellowKeyboardController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		bool WPressed = false;
+		bool EPressed = false;
+
+		CheckKeyPresses (out WPressed, out EPressed);
+
 		if (GetComponent<TimerRun>().InstructionsTimeLeft > 0)
 		{
 			return;
@@ -37,7 +42,7 @@ public class YellowKeyboardController : MonoBehaviour {
 			return;
 		}
 
-		if (Input.GetKeyDown(W))
+		if (WPressed)
 		{
 			ButtonPressed = true;
 			
@@ -55,7 +60,7 @@ public class YellowKeyboardController : MonoBehaviour {
                 WrongSound.Play();
 			}
 		}
-		else if (Input.GetKeyDown(E))
+		else if (EPressed)
 		{
 			ButtonPressed = true;
 			
@@ -76,4 +81,31 @@ public class YellowKeyboardController : MonoBehaviour {
 		}
 		
 	}
+
+	void CheckKeyPresses(out bool W, out bool E)
+	{
+		W = Input.GetKey(KeyCode.W);
+		E = Input.GetKey(KeyCode.E);
+		
+		
+		foreach (Touch touch in Input.touches) 
+		{
+			if ( touch.phase != TouchPhase.Canceled && touch.phase != TouchPhase.Ended)
+			{
+				var pixelVector = touch.position;
+				
+				var viewPortClick = Camera.main.ScreenToViewportPoint(pixelVector);
+				if (viewPortClick.x < 0.25f)
+				{
+					W = true;
+				}
+				else if (viewPortClick.x > 0.75f)
+				{
+					E = true;
+				}
+			}
+		}
+		
+	}
+
 }

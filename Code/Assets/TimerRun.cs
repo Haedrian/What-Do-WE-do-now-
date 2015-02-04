@@ -110,12 +110,12 @@ public class TimerRun : MonoBehaviour
             if (MissionComplete)
             {
                 //Load the next one
-                Application.LoadLevel(0);
+                Application.LoadLevel("LoadLevelScene");
             }
             else
             {
                 //Failure
-                Application.LoadLevel(15); //Loser Menu
+                Application.LoadLevel("Loser"); //Loser Menu
             }
         }
     }

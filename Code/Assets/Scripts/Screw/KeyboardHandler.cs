@@ -32,6 +32,11 @@ public class KeyboardHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		bool W = false;
+		bool E = false;
+
+		CheckKeyPresses (out W, out E);
+
 		if (GetComponent<TimerRun>().InstructionsTimeLeft > 0)
 		{
 			return;
@@ -89,7 +94,7 @@ public class KeyboardHandler : MonoBehaviour {
 			return;
 		}
 		
-		if (Input.GetKeyDown(Screw))
+		if ( (Screw == KeyCode.W && W) || (Screw == KeyCode.E && E) )
 		{
 			ScrewPressed = true;
 
@@ -107,7 +112,7 @@ public class KeyboardHandler : MonoBehaviour {
             }
 		}
 		
-		if (Input.GetKeyDown(DontScrew))
+		if ((DontScrew == KeyCode.W && W) || (DontScrew == KeyCode.E && E))
 		{
 			DontScrewPressed = true;
 
@@ -121,4 +126,31 @@ public class KeyboardHandler : MonoBehaviour {
 			}
 		}
 	}
+
+	void CheckKeyPresses(out bool W, out bool E)
+	{
+		W = Input.GetKey(KeyCode.W);
+		E = Input.GetKey(KeyCode.E);
+		
+		
+		foreach (Touch touch in Input.touches) 
+		{
+			if ( touch.phase != TouchPhase.Canceled && touch.phase != TouchPhase.Ended)
+			{
+				var pixelVector = touch.position;
+				
+				var viewPortClick = Camera.main.ScreenToViewportPoint(pixelVector);
+				if (viewPortClick.x < 0.25f)
+				{
+					W = true;
+				}
+				else if (viewPortClick.x > 0.75f)
+				{
+					E = true;
+				}
+			}
+		}
+		
+	}
+
 }

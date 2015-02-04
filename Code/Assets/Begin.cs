@@ -6,7 +6,8 @@ public class Begin : MonoBehaviour {
 	// Use this for initialization
 	void Awake () 
     {
-        Application.LoadLevel(6);
+        Application.LoadLevel("MainMenu");
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 	}
 	
 	// Update is called once per frame

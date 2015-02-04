@@ -21,12 +21,17 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
+		bool W = false;
+		bool E = false;
+
+		CheckKeyPresses (out W, out E);
+
         //have we moved ?
         //tell the animator
         GetComponent<Animator>().SetBool("IsWalkingLeft", Input.GetKey(KeyCode.W));
         GetComponent<Animator>().SetBool("IsWalkingRight", Input.GetKey(KeyCode.E));
 
-        if (Input.GetKey(KeyCode.W))
+        if (W)
         {
             //Flip!
             if (this.transform.localScale.x > 0)
@@ -38,7 +43,7 @@ public class Movement : MonoBehaviour {
             }
         }
         else
-        if (Input.GetKey(KeyCode.E))
+        if (E)
         {
             //Flip!
             if (this.transform.localScale.x < 0)
@@ -50,7 +55,7 @@ public class Movement : MonoBehaviour {
             }
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (W)
         {
             speed.x += -2;
 
@@ -60,7 +65,7 @@ public class Movement : MonoBehaviour {
             speed.x = 0;
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (E)
         {
             speed.x += 2;
         }
@@ -123,4 +128,30 @@ public class Movement : MonoBehaviour {
         // 5 - Move the game object
         rigidbody2D.velocity = movement;
     }
+
+	void CheckKeyPresses(out bool W, out bool E)
+	{
+		W = Input.GetKey(KeyCode.W);
+		E = Input.GetKey(KeyCode.E);
+		
+		
+		foreach (Touch touch in Input.touches) 
+		{
+			if ( touch.phase != TouchPhase.Canceled && touch.phase != TouchPhase.Ended)
+			{
+				var pixelVector = touch.position;
+				
+				var viewPortClick = Camera.main.ScreenToViewportPoint(pixelVector);
+				if (viewPortClick.x < 0.25f)
+				{
+					W = true;
+				}
+				else if (viewPortClick.x > 0.75f)
+				{
+					E = true;
+				}
+			}
+		}
+		
+	}
 }

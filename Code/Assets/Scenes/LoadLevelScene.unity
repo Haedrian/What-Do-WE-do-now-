@@ -187,7 +187,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0045af671833064185ed20d4359f8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNumbers: 0100000001000000020000000300000003000000040000000500000007000000080000000b0000000c0000000d0000000d0000001000000010000000
+  SceneNumbers:
+  - Collect
+  - Dodge
+  - DontScrew
+  - DynamiteCandle
+  - Hammer
+  - LoadLevelScene
+  - Pills
+  - Scorpion
+  - Screw
+  - WritingYellow
+  - WritingYellow2
+  - Zombie
+  - Zombie
+  - Scorpion
+  - DynamiteCandle
 --- !u!4 &1599966344
 Transform:
   m_ObjectHideFlags: 0

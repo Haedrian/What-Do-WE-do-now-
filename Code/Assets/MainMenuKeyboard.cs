@@ -10,20 +10,26 @@ public class MainMenuKeyboard : MonoBehaviour {
     {
 	    //Clear the scenes from prefs
         PlayerPrefs.DeleteKey("scenes");
+		Screen.SetResolution (1024, 768, true);
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyDown(KeyCode.W))
+		bool W = false;
+		bool E = false;
+
+		CheckKeyPresses (out W, out E);
+
+		if (W)
 		{
-			Application.LoadLevel(0); //Start the game
+			Application.LoadLevel("LoadLevelScene"); //Start the game
             PlayerPrefs.SetInt("lastScore", 0);
             PlayerPrefs.Save();
 		}
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (E)
         {
-            Application.LoadLevel(14); //Credits
+            Application.LoadLevel("Credits"); //Credits
         }
 	}
 
@@ -48,4 +54,31 @@ public class MainMenuKeyboard : MonoBehaviour {
             }
         }
     }
+
+	void CheckKeyPresses(out bool W, out bool E)
+	{
+		W = Input.GetKey(KeyCode.W);
+		E = Input.GetKey(KeyCode.E);
+		
+		
+		foreach (Touch touch in Input.touches) 
+		{
+			if ( touch.phase != TouchPhase.Canceled && touch.phase != TouchPhase.Ended)
+			{
+				var pixelVector = touch.position;
+				
+				var viewPortClick = Camera.main.ScreenToViewportPoint(pixelVector);
+				if (viewPortClick.x < 0.25f)
+				{
+					W = true;
+				}
+				else if (viewPortClick.x > 0.75f)
+				{
+					E = true;
+				}
+			}
+		}
+		
+	}
+
 }

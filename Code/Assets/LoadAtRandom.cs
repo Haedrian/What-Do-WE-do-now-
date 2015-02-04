@@ -10,7 +10,7 @@ public class LoadAtRandom : MonoBehaviour
     /// <summary>
     /// The integers of scene numbers containing game scenes
     /// </summary>
-    public List<int> SceneNumbers;
+    public List<string> SceneNumbers;
 
     // Use this for initialization
     void Awake()
@@ -20,25 +20,25 @@ public class LoadAtRandom : MonoBehaviour
         {
             if (PlayerPrefs.GetString("scenes").Length == 0) //Completed them all, clever fellow
             {
-                SceneNumbers = new List<int>();
+                SceneNumbers = new List<string>();
             }
             else
             {
-                //It's a comma delimited set of ids
-                SceneNumbers = PlayerPrefs.GetString("scenes").Split(',').Select(s => Int32.Parse(s)).ToList();
+                //It's a comma delimited set of scene names
+                SceneNumbers = PlayerPrefs.GetString("scenes").Split(',').ToList();
             }
         }
 
         if (SceneNumbers.Count <= 0)
         {
             //Player won!
-            Application.LoadLevel(9);
+            Application.LoadLevel("Winner");
         }
         else
         {
-            int sceneRandom = SceneNumbers[UnityEngine.Random.Range(0, (SceneNumbers.Count))];
+            string sceneRandom = SceneNumbers[UnityEngine.Random.Range(0, (SceneNumbers.Count))];
 
-            //Remove the scene number from the list
+            //Remove the scene from the list
             SceneNumbers.Remove(sceneRandom);
 
             //Write them to prefs

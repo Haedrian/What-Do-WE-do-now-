@@ -19,13 +19,17 @@ public class MovementCollect : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
+		bool wPressed = false;
+		bool ePressed = false;
+	
+		CheckKeyPresses (out wPressed, out ePressed);
 
         //have we moved ?
         //tell the animator
         GetComponent<Animator>().SetBool("IsWalkingLeft", Input.GetKey(KeyCode.W));
         GetComponent<Animator>().SetBool("IsWalkingRight", Input.GetKey(KeyCode.E));
 
-        if (Input.GetKey(KeyCode.W))
+        if (wPressed)
         {
             //Flip!
             if (this.transform.localScale.x > 0)
@@ -37,7 +41,7 @@ public class MovementCollect : MonoBehaviour {
             }
         }
         else
-            if (Input.GetKey(KeyCode.E))
+            if (ePressed)
             {
                 //Flip!
                 if (this.transform.localScale.x < 0)
@@ -49,7 +53,7 @@ public class MovementCollect : MonoBehaviour {
                 }
             }
 
-        if (Input.GetKey(KeyCode.W))
+        if (wPressed)
         {
             speed.x += -2;
 
@@ -59,7 +63,7 @@ public class MovementCollect : MonoBehaviour {
             speed.x = 0;
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (ePressed)
         {
             speed.x += 2;
         }
@@ -114,4 +118,35 @@ public class MovementCollect : MonoBehaviour {
         // 5 - Move the game object
         rigidbody2D.velocity = movement;
     }
+
+	/// <summary>
+	/// Checks whether W or E have been pressed (or tapped on the mobile)
+	/// </summary>
+	/// <param name="W">W.</param>
+	/// <param name="E">E.</param>
+	void CheckKeyPresses(out bool W, out bool E)
+	{
+		W = Input.GetKey(KeyCode.W);
+		E = Input.GetKey(KeyCode.E);
+
+
+		foreach (Touch touch in Input.touches) 
+		{
+			if ( touch.phase != TouchPhase.Canceled && touch.phase != TouchPhase.Ended)
+			{
+				var pixelVector = touch.position;
+
+				var viewPortClick = Camera.main.ScreenToViewportPoint(pixelVector);
+				if (viewPortClick.x < 0.25f)
+				{
+					W = true;
+				}
+				else if (viewPortClick.x > 0.75f)
+				{
+					E = true;
+				}
+			}
+		}
+
+	}
 }
