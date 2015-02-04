@@ -31,6 +31,11 @@ public class MainMenuKeyboard : MonoBehaviour {
         {
             Application.LoadLevel("Credits"); //Credits
         }
+
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
 	}
 
     void OnGUI()
