@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Zombie\ZObjectSelector.cs" />
     <Compile Include="Assets\Scripts\Zombie\ZombieController.cs" />
     <Compile Include="Assets\ShakeScript.cs" />
+    <Compile Include="Assets\ShowIfMobile.cs" />
     <Compile Include="Assets\ThingsToDo.cs" />
     <Compile Include="Assets\TimerRun.cs" />
   </ItemGroup>
