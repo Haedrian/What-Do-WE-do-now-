@@ -22,37 +22,34 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.gameObject.tag == CollisionTarget)
         {
-            if (collision.gameObject.tag == "Player")
+            GameObject timerObject = GameObject.Find("Controller");
+            if (timerObject == null)
+                throw new MissingReferenceException();
+
+            TimerRun timer = timerObject.GetComponent<TimerRun>();
+            if (timer == null)
+                throw new MissingComponentException();
+
+            if (IsInvincible)
             {
-                GameObject timerObject = GameObject.Find("Controller");
-                if (timerObject == null)
-                    throw new MissingReferenceException();
+                timer.MissionComplete = false;
+                timer.MissionFailed = true;
+            }
+            else
+            {
+                //        float yVelocity = collision.gameObject.transform.rigidbody2D.velocity.y;
 
-                TimerRun timer = timerObject.GetComponent<TimerRun>();
-                if (timer == null)
-                    throw new MissingComponentException();
+                //        if (yVelocity < 0)
+                //        {
+                //            Debug.Log("Enemy will lose..." + yVelocity);
 
-                if (IsInvincible)
-                {
-                    timer.MissionComplete = false;
-                    timer.MissionFailed = true;
-                }
-                else
-                {
-                    float yVelocity = collision.gameObject.transform.rigidbody2D.velocity.y;
-
-                    if (yVelocity < 0)
-                    {
-                        Debug.Log("Enemy will lose..." + yVelocity);
-
-                        Destroy(this.gameObject);
-                    }
-                    else
-                    {
-                        timer.MissionComplete = false;
-                        timer.MissionFailed = true;
-                    }
-                }
+                //            Destroy(this.gameObject);
+                //        }
+                //        else
+                //        {
+                timer.MissionComplete = false;
+                timer.MissionFailed = true;
+                //        }
             }
         }
     }

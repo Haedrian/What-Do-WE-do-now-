@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac92f221940b604dbfef43d20354854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConnectionEstablishedImage: {fileID: 0}
 --- !u!4 &2031672871
 Transform:
   m_ObjectHideFlags: 0

@@ -41,3 +41,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Loser.unity
   - enabled: 1
     path: Assets/Scenes/Zombie.unity
+  - enabled: 1
+    path: Assets/Scenes/Marco.unity

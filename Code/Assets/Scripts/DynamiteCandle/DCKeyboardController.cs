@@ -4,9 +4,9 @@ public class DCKeyboardController : MonoBehaviour
 {
     public KeyCode Ignite = KeyCode.W, DoNothing = KeyCode.E;
 
-	public TimerRun Timer;
+    public TimerRun Timer;
 
-	public AudioSource Explosion;
+    public AudioSource Explosion;
 
     public Transform Splint;
 
@@ -20,7 +20,7 @@ public class DCKeyboardController : MonoBehaviour
     /// </summary>
     private bool _keyPressed;
 
-	private bool _ignite;
+    private bool _ignite;
 
     public enum WinConditions
     {
@@ -28,55 +28,48 @@ public class DCKeyboardController : MonoBehaviour
         Ignite = 1
     }
 
-	void Start()
-	{
-		_ignite = false;
-	}
+    void Start()
+    {
+        _ignite = false;
+    }
 
     void Update()
     {
-		bool W = false;
-		bool E = false;
+        bool W = false;
+        bool E = false;
 
-		CheckKeyPresses (out W, out E);
-
-		Debug.Log ("W = " + W);
+        CheckKeyPresses(out W, out E);
 
         if (this._keyPressed)
-		{
             return;
-		}
-
         if (this.Timer.InstructionsTimeLeft > 0)
-        {
             return; //Instructions still showing
-        }
 
         if ((Ignite == KeyCode.W && W) || (Ignite == KeyCode.E && E))
         {
             this._keyPressed = true;
 
-			this._ignite = true;
+            this._ignite = true;
 
-			if (this.Explosion != null)
-			{
-				this.Explosion.Play();
-			}
+            if (this.Explosion != null)
+            {
+                this.Explosion.Play();
+            }
 
             if (WinCondition == WinConditions.Ignite)
             {
-				Timer.MissionComplete = true;
+                Timer.MissionComplete = true;
             }
         }
         else if ((DoNothing == KeyCode.E && E) || (DoNothing == KeyCode.W && W))
         {
             this._keyPressed = true;
 
-			this._ignite = false;
+            this._ignite = false;
 
             if (WinCondition == WinConditions.DoNothing)
             {
-				Timer.MissionComplete = true;
+                Timer.MissionComplete = true;
             }
 
             //remove the splint
@@ -91,30 +84,28 @@ public class DCKeyboardController : MonoBehaviour
         }
     }
 
-	void CheckKeyPresses(out bool W, out bool E)
-	{
-		W = Input.GetKey(KeyCode.W);
-		E = Input.GetKey(KeyCode.E);
-		
-		
-		foreach (Touch touch in Input.touches) 
-		{
-			if ( touch.phase != TouchPhase.Canceled && touch.phase != TouchPhase.Ended)
-			{
-				var pixelVector = touch.position;
-				
-				var viewPortClick = Camera.main.ScreenToViewportPoint(pixelVector);
-				if (viewPortClick.x < 0.25f)
-				{
-					W = true;
-				}
-				else if (viewPortClick.x > 0.75f)
-				{
-					E = true;
-				}
-			}
-		}
-		
-	}
+    void CheckKeyPresses(out bool W, out bool E)
+    {
+        W = Input.GetKey(KeyCode.W);
+        E = Input.GetKey(KeyCode.E);
 
+
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.phase != TouchPhase.Canceled && touch.phase != TouchPhase.Ended)
+            {
+                var pixelVector = touch.position;
+
+                var viewPortClick = Camera.main.ScreenToViewportPoint(pixelVector);
+                if (viewPortClick.x < 0.25f)
+                {
+                    W = true;
+                }
+                else if (viewPortClick.x > 0.75f)
+                {
+                    E = true;
+                }
+            }
+        }
+    }
 }
