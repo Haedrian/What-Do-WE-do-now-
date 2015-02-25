@@ -9,7 +9,10 @@ public class MainMenuKeyboard : MonoBehaviour
     {
         // Clear the scenes from prefs
         PlayerPrefs.DeleteKey("scenes");
-        //Screen.SetResolution(1024, 768, true);
+
+#if UNITY_ANDROID
+        Screen.SetResolution(1024, 768, true);
+#endif
     }
 
     // Update is called once per frame
