@@ -9,7 +9,7 @@ public class MainMenuKeyboard : MonoBehaviour
     {
         // Clear the scenes from prefs
         PlayerPrefs.DeleteKey("scenes");
-        Screen.SetResolution(1024, 768, true);
+        //Screen.SetResolution(1024, 768, true);
     }
 
     // Update is called once per frame
